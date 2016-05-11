@@ -26,6 +26,11 @@ class ArithmeticFunctions():
 		"""Division function"""
 		return a / b
 
+	# Subtract function
+	def subtract(self, a, b):
+		"""Subtraction function"""
+		return a - b
+
 # Creating an object of the ArithmeticFunctions Class
 arithmetic_object = ArithmeticFunctions()
 
@@ -33,11 +38,13 @@ arithmetic_object = ArithmeticFunctions()
 result_add = arithmetic_object.addition(3, 3)
 result_mult = arithmetic_object.multiply(3, 3)
 result_div = arithmetic_object.divide(10, 5)
+result_sub = arithmetic_object.subtract(3, 10)
 
 # printing the results
 print "The Sum is: ", result_add
 print "The Product is: ", result_mult
 print "The Divident is: ", result_div
+print "The Difference is: ", result_sub
 
 # Test class
 class TestClass(unittest.TestCase):
@@ -57,3 +64,8 @@ class TestClass(unittest.TestCase):
 	def test_division(self):
 		"""Division test function"""
 		self.assertTrue(arithmetic_object.divide(10, 5) == 2)
+
+	# test for subtraction
+	def test_subtraction(self):
+		"""Subtraction test function"""
+		self.assertTrue(arithmetic_object.subtract(5, 5) == 0)
