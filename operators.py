@@ -1,3 +1,9 @@
+#######################################################
+# Author: Alangi Derick (d3r1ck), B.Eng, CM			  #
+# Date: 11th May, 2016. 							  #
+# Aim: Practicing my skills on Unit testing in Python #
+#######################################################
+
 # Importing unittest
 import unittest
 
@@ -15,15 +21,23 @@ class ArithmeticFunctions():
 		"""Multiplication function"""
 		return a * b
 
+	# Divide function
+	def divide(self, a, b):
+		"""Division function"""
+		return a / b
+
+# Creating an object of the ArithmeticFunctions Class
 arithmetic_object = ArithmeticFunctions()
 
-# Call the addition() method
+# Call the various methods to test operations
 result_add = arithmetic_object.addition(3, 3)
 result_mult = arithmetic_object.multiply(3, 3)
+result_div = arithmetic_object.divide(10, 5)
 
 # printing the results
 print "The Sum is: ", result_add
 print "The Product is: ", result_mult
+print "The Divident is: ", result_div
 
 # Test class
 class TestClass(unittest.TestCase):
@@ -38,3 +52,8 @@ class TestClass(unittest.TestCase):
 	def test_multiplication(self):
 		"""Multiplication test function"""
 		self.assertTrue(arithmetic_object.multiply(3, 3) == 9)
+
+	# test for division
+	def test_division(self):
+		"""Division test function"""
+		self.assertTrue(arithmetic_object.divide(10, 5) == 2)
